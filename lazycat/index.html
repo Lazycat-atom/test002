@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老公白色情人节快乐！</title>
+    <!-- 更换为更酷炫的字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "微软雅黑", sans-serif;
+            /* 赛博朋克风格背景 - 蓝紫色系 */
+            background: linear-gradient(135deg, #0c0e1a, #2a0e44);
+            background-image: 
+                linear-gradient(135deg, #0c0e1a, #2a0e44),
+                repeating-linear-gradient(90deg, rgba(59, 38, 103, 0.1) 0px, rgba(59, 38, 103, 0.1) 1px, transparent 1px, transparent 30px),
+                repeating-linear-gradient(0deg, rgba(59, 38, 103, 0.1) 0px, rgba(59, 38, 103, 0.1) 1px, transparent 1px, transparent 30px);
+            color: #c4c8ff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        /* 赛博朋克风格标题 - 增强渐变效果和更酷炫的字体 */
+        h1 {
+            font-family: 'Audiowide', cursive;
+            font-size: 4.5rem; /* 保持1.5倍大小 */
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            background-image: linear-gradient(90deg, #00ffff, #ff00ff); /* 更鲜明的蓝紫渐变 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 3px;
+            font-weight: 700;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); /* 添加白色描边 */
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 添加伪元素以增强渐变效果 */
+        h1::before {
+            content: "老公白色情人节快乐！";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: linear-gradient(90deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0.7;
+            z-index: -1;
+            filter: blur(8px);
+            animation: pulseGlow 2s infinite alternate;
+        }
+        
+        /* 标题下方添加霓虹灯线条 */
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent);
+            animation: scanLineGlow 2s infinite linear;
+        }
+        
+        @keyframes pulseGlow {
+            0% { opacity: 0.4; filter: blur(8px); }
+            100% { opacity: 0.8; filter: blur(12px); }
+        }
+        
+        @keyframes scanLineGlow {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* 照片区域左右布局 */
+        .photos-container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin: 3rem auto;
+        }
+        
+        /* 心形照片墙样式调整 */
+        .heart-gallery {
+            width: 50%;
+            height: 500px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        /* 轮播区样式调整 */
+        .slideshow-container {
+            width: 50%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(105, 16, 196, 0.7);
+            border: 1px solid #05d9e8;
+            flex-grow: 1;
+            background-color: rgba(12, 14, 26, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 心形照片和装饰块通用样式 */
+        .heart-gallery .photo,
+        .heart-gallery .decoration-block {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(105, 16, 196, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .heart-gallery .photo {
+            border: 2px solid #05d9e8;
+            cursor: pointer;
+        }
+        
+        .heart-gallery .decoration-block {
+            background: linear-gradient(135deg, #9d4edd, #5a189a);
+            opacity: 0.7;
+        }
+        
+        .heart-gallery .photo:hover {
+            transform: scale(1.1) rotate(3deg);
+            z-index: 10;
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.9);
+        }
+        
+        .heart-gallery .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(1.2);
+        }
+        
+        /* 更完善的心形布局 - 照片位置 */
+        .heart-gallery .photo:nth-child(1) { top: 120px; left: 180px; }
+        .heart-gallery .photo:nth-child(2) { top: 60px; left: 120px; }
+        .heart-gallery .photo:nth-child(3) { top: 60px; left: 240px; }
+        .heart-gallery .photo:nth-child(4) { top: 180px; left: 60px; }
+        .heart-gallery .photo:nth-child(5) { top: 180px; left: 300px; }
+        .heart-gallery .photo:nth-child(6) { top: 240px; left: 120px; }
+        .heart-gallery .photo:nth-child(7) { top: 240px; left: 240px; }
+        .heart-gallery .photo:nth-child(8) { top: 300px; left: 180px; }
+        .heart-gallery .photo:nth-child(9) { top: 360px; left: 120px; }
+        .heart-gallery .photo:nth-child(10) { top: 360px; left: 240px; }
+        
+        /* 装饰块位置 - 完善心形 */
+        /* 已移除顶部中间的装饰块 */
+        /* .heart-gallery .decoration-block:nth-child(11) { top: 0px; left: 180px; } */
+        .heart-gallery .decoration-block:nth-child(11) { top: 60px; left: 60px; }
+        .heart-gallery .decoration-block:nth-child(12) { top: 60px; left: 300px; }
+        .heart-gallery .decoration-block:nth-child(13) { top: 120px; left: 0px; }
+        .heart-gallery .decoration-block:nth-child(14) { top: 120px; left: 360px; }
+        .heart-gallery .decoration-block:nth-child(15) { top: 180px; left: 180px; }
+        .heart-gallery .decoration-block:nth-child(16) { top: 240px; left: 0px; }
+        .heart-gallery .decoration-block:nth-child(17) { top: 240px; left: 360px; }
+        .heart-gallery .decoration-block:nth-child(18) { top: 300px; left: 60px; }
+        .heart-gallery .decoration-block:nth-child(19) { top: 300px; left: 300px; }
+        .heart-gallery .decoration-block:nth-child(20) { top: 420px; left: 180px; }
+        
+        /* 轮播图片样式 */
+        .slideshow-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            object-fit: contain; /* 显示完整图片 */
+        }
+        
+        .slideshow-slide.active {
+            opacity: 1 !important;
+            z-index: 1;
+        }
+        
+        /* 被选中的照片高亮效果 */
+        .heart-gallery .photo.selected {
+            border: 2px solid #ff2a6d;
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.9);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 960px) {
+            .photos-container {
+                flex-direction: column;
+            }
+            
+            .heart-gallery,
+            .slideshow-container {
+                width: 100%;
+            }
+        }
+        
+        .message-box {
+            background-color: rgba(12, 14, 26, 0.8);
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(105, 16, 196, 0.7);
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #05d9e8;
+        }
+        
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #05d9e8, transparent);
+            animation: scanLine 2s linear infinite;
+        }
+        
+        .love-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 1rem;
+            color: #c4c8ff;
+        }
+        
+        .special-moment {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: rgba(42, 14, 68, 0.7);
+            border-radius: 5px;
+            position: relative;
+            border-left: 3px solid #05d9e8;
+        }
+        
+        .special-moment h3 {
+            color: #05d9e8;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .heart-button {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 2rem auto;
+            background: none;
+            color: #ff2a6d;
+            border: 2px solid #ff2a6d;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.7);
+            transition: all 0.3s ease;
+            animation: neonPulse 1.5s infinite;
+            position: relative;
+        }
+        
+        .heart-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.9);
+            background-color: rgba(255, 42, 109, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            color: #6b70a8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(5, 217, 232, 0.3);
+        }
+        
+        /* 动画效果 */
+        @keyframes neonGlow {
+            from {
+                text-shadow: 
+                    0 0 5px rgba(5, 217, 232, 0.7),
+                    0 0 10px rgba(5, 217, 232, 0.5),
+                    0 0 20px rgba(157, 78, 221, 0.5),
+                    0 0 40px rgba(157, 78, 221, 0.3);
+            }
+            to {
+                text-shadow: 
+                    0 0 10px rgba(5, 217, 232, 0.9),
+                    0 0 20px rgba(5, 217, 232, 0.7),
+                    0 0 40px rgba(157, 78, 221, 0.7),
+                    0 0 80px rgba(157, 78, 221, 0.5);
+            }
+        }
+        
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 10px rgba(255, 42, 109, 0.7); }
+            50% { box-shadow: 0 0 25px rgba(255, 42, 109, 1); }
+            100% { box-shadow: 0 0 10px rgba(255, 42, 109, 0.7); }
+        }
+        
+        @keyframes scanLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .falling-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff2a6d"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center center;
+            background-size: contain;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 5px #ff2a6d);
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* 赛博朋克网格背景 */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(5, 217, 232, 0.05) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(5, 217, 232, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* 特别图片模态框样式 */
+        .special-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .special-modal-content {
+            position: relative;
+            background-color: rgba(12, 14, 26, 0.9);
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 42, 109, 0.9);
+            border: 2px solid #05d9e8;
+            text-align: center;
+            animation: modalSlideIn 0.5s ease;
+        }
+        
+        #special-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 5px;
+            border: 2px solid #05d9e8;
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.7);
+        }
+        
+        .special-message {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #ff2a6d;
+            text-shadow: 0 0 10px rgba(255, 42, 109, 0.7);
+            font-family: 'Audiowide', cursive;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #05d9e8;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #ff2a6d;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+    <div class="falling-hearts" id="falling-hearts"></div>
+    
+    <div class="container">
+        <header>
+            <h1>老公白色情人节快乐！</h1>
+        </header>
+        
+        <!-- 照片区域 - 左右结构 -->
+        <div class="photos-container">
+            <!-- 左侧：心形照片墙 -->
+            <div class="heart-gallery" id="heart-gallery">
+                <!-- 实际照片 - 将由JS加载 -->
+            </div>
+            
+            <!-- 右侧：轮播区域 -->
+            <div class="slideshow-container" id="slideshow">
+                <!-- 轮播图片 - 将由JS加载 -->
+            </div>
+        </div>
+        
+        <div class="message-box">
+            <p class="love-text">亲爱的宁桐</p>
+            <p class="love-text">在深夜吸奶器规律的嗡鸣里，突然想起大三那年宿舍楼下，你捂着装满豆浆的保温杯等我的模样。如今保温杯换成奶瓶，豆浆变成了奶粉，你依然会在每个半夜翻身的瞬间，下意识替我掖好被角。</p>
+            <p class="love-text">当年骑行西藏的户外达人，现在对着婴儿咿呀学语；五台连穿的锐气，早融成拍嗝时哼唱的走调儿歌。那些被婴儿车取代的情侣座，被育儿百科覆盖的旅行攻略，却让爱情变成毛衣内层的绒里——看不见的妥帖。</p>  
+            <p class="love-text">十四年的时光像块被生活反复揉捏的面团，发酵出蓬松踏实的幸福。当我们的爱情从银杏树变成奶粉勺，我才读懂陪伴才是最郑重的告白。</p>
+            <p class="love-text">所以，接下来的日子，咱们继续一起走下去，把十四年走成四十年~</p>
+        </div>
+        
+        <button class="heart-button" id="heart-button">❤</button>
+        
+        <footer>
+            <p>爱你的岸子 · 梧桐时光 · 2025/03/14</p>
+        </footer>
+    </div>
+    
+    <!-- 在body中添加一个隐藏的特别图片模态框 -->
+    <div id="special-modal" class="special-modal">
+        <div class="special-modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="special-image" src="./images/WechatIMG64.jpg" alt="特别的图片">
+           <!--  <p class="special-message">我爱你，一生一世！</p> -->
+        </div>
+    </div>
+    
+    <script>
+        // 自动检测和加载图片的函数
+        function loadImages() {
+            const slideshow = document.getElementById('slideshow');
+            const heartGallery = document.getElementById('heart-gallery');
+            
+            // 清空现有内容
+            slideshow.innerHTML = '';
+            heartGallery.innerHTML = '';
+            
+            // 使用lazycat目录下的图片路径 - 保持原有路径
+            // 这里假设images文件夹中有这些图片，根据实际情况调整
+            const images = [
+                './images/WechatIMG54.jpg',
+                './images/WechatIMG55.jpg',
+                './images/WechatIMG56.jpg',
+                './images/WechatIMG57.jpg',
+                './images/WechatIMG58.jpg',
+                './images/WechatIMG59.jpg',
+                './images/WechatIMG60.jpg',
+                './images/WechatIMG61.jpg',
+                './images/WechatIMG62.jpg',
+                './images/WechatIMG63.jpg'
+            ];
+            
+            
+            // 添加心形照片墙的照片
+            images.forEach((src, index) => {
+                const photoDiv = document.createElement('div');
+                photoDiv.className = 'photo';
+                photoDiv.dataset.index = index;
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = "我们的照片";
+                
+                photoDiv.appendChild(img);
+                heartGallery.appendChild(photoDiv);
+                
+                // 添加点击事件 - 点击照片在轮播区显示
+                photoDiv.addEventListener('click', function() {
+                    showInSlideshow(index);
+                    
+                    // 移除其他照片的选中状态
+                    document.querySelectorAll('.heart-gallery .photo').forEach(p => {
+                        p.classList.remove('selected');
+                    });
+                    
+                    // 添加当前照片的选中状态
+                    this.classList.add('selected');
+                });
+            });
+            
+            // 添加装饰块，完善心形 - 减少一个装饰块
+            for (let i = 0; i < 10; i++) { // 从11个减少到10个
+                const decorBlock = document.createElement('div');
+                decorBlock.className = 'decoration-block';
+                heartGallery.appendChild(decorBlock);
+            }
+            
+            // 初始化轮播区 - 使用同样的图片
+            images.forEach((src, index) => {
+                const slide = document.createElement('img');
+                slide.src = src;
+                slide.className = `slideshow-slide ${index === 0 ? 'active' : ''}`;
+                slide.alt = "我们的照片";
+                // 直接设置样式确保第一张可见
+                if (index === 0) {
+                    slide.style.opacity = '1';
+                    slide.style.zIndex = '1';
+                }
+                slideshow.appendChild(slide);
+            });
+            
+            // 默认选中第一张照片
+            const firstPhoto = document.querySelector('.heart-gallery .photo');
+            if (firstPhoto) {
+                firstPhoto.classList.add('selected');
+            }
+        }
+        
+        // 在轮播区显示指定索引的图片
+        function showInSlideshow(index) {
+            const slides = document.querySelectorAll('.slideshow-slide');
+            
+            // 隐藏所有幻灯片
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.opacity = '0';
+                slide.style.zIndex = '0';
+            });
+            
+            // 显示选中的幻灯片
+            if (slides[index]) {
+                slides[index].classList.add('active');
+                slides[index].style.opacity = '1';
+                slides[index].style.zIndex = '1';
+            }
+        }
+        
+        // 页面加载完成后执行
+        window.addEventListener('DOMContentLoaded', function() {
+            loadImages();
+            
+            // 创建初始心形
+            for(let i = 0; i < 10; i++) {
+                createHeart();
+            }
+        });
+        
+        // 创建飘落的心形
+        const fallingHeartsContainer = document.getElementById('falling-hearts');
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.opacity = Math.random();
+            
+            // 赛博朋克风格 - 随机设置动画时间和延迟
+            const duration = Math.random() * 3 + 2;
+            heart.style.animation = `fall ${duration}s linear infinite`;
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            
+            fallingHeartsContainer.appendChild(heart);
+            
+            // 自动删除心形元素
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+        
+        // 点击心形按钮的效果
+        const heartButton = document.getElementById('heart-button');
+        heartButton.addEventListener('click', function() {
+            // 创建爆炸效果
+            for(let i = 0; i < 30; i++) {
+                createHeart();
+            }
+            
+            // 显示特别图片模态框
+            const modal = document.getElementById('special-modal');
+            modal.style.display = 'block';
+        });
+        
+        // 关闭模态框
+        const closeModal = document.querySelector('.close-modal');
+        closeModal.addEventListener('click', function() {
+            const modal = document.getElementById('special-modal');
+            modal.style.display = 'none';
+        });
+        
+        // 点击模态框外部关闭
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('special-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
